@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="zorka_bejgli.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="recipe-main-title">Bejgli recept</h1>
+    <div class="recipe">
+        <div class="recipe-div">
+            <div class="recipe-title">
+                <h2 onclick="showDiv(1, 1)">Hozzávalók (Tészához)<i class="fa-solid fa-chevron-down" id="chevron-down-1"></i></h2>
+            </div>
+            <div class="recipe-content" id="recipe-text-1">
+                <p class="recipe-content-text">
+                    <ul>
+                    <li>50 dkg liszt</li>
+                	<li>25 dkg margarin/vaj</li>
+                    <li>1 db tojás</li>
+                    <li>1 dkg élesztő (kevés cukros tejben felfuttatjuk)</li>
+                    <li>só</li>
+                    <li>kenéshez 1 tojássárgája</li>
+                    </ul>
+                    
+                    </p>
+            </div>
+        </div>
+        <div class="recipe-div">
+            <div class="recipe-title">
+                <h2 onclick="showDiv(2, 2)">Hozzávalók (Töltelékhez:Diós)<i class="fa-solid fa-chevron-down" id="chevron-down-2"></i></h2>
+            </div>
+            <div class="recipe-content" id="recipe-text-2">
+                <p class="recipe-content-text">
+                    <ul>
+                    <li>20 dkg dió (ledarálva)</li>    
+                    <li>16-17 dkg porcukor</li>
+                    <li>250 ml tej</li>
+                    <li>1 csomag vaníliás cukor</li>
+                    <li>narancs leve, héja</li>
+                    </ul>
+                    
+                    </p>
+            </div>
+        </div>
+        <div class="recipe-div">
+            <div class="recipe-title">
+                <h2 onclick="showDiv(3, 3)">Hozzávalók (Töltelékhez:Mákos) <i class="fa-solid fa-chevron-down" id="chevron-down-3"></i></h2>
+            </div>
+            <div class="recipe-content" id="recipe-text-3">
+                <p class="recipe-content-text">
+                    <ul>
+                    <li>20 dkg mák (ledarálva)</li>
+                    <li>16-17 dkg porcukor</li>
+                    <li>250 ml tej</li>
+                    <li>1 csomag vaníliás cukor</li>
+                    <li>citrom leve, héja</li>
+                    </ul>
+                    
+                    </p>
+            </div>
+        </div>
+        <div class="recipe-div">
+            <div class="recipe-title">
+                <h2 onclick="showDiv(4, 4)"> Elkészítés <i class="fa-solid fa-chevron-down" id="chevron-down-4"></i></h2>
+            </div>
+            <div class="recipe-content" id="recipe-text-4">
+                <p class="recipe-content-text">
+                    <ul>
+                    <li>A tészta hozzávalóit összekeverni</li>
+                    <li>2-3 órát a hűtőben pihentetni </li>
+                    <li>Megtölteni, majd megkenni tojássárgájával</li>
+                    <li>A sütőben (25-30 percig 170°C) megsütni</li>   
+                    </ul>
+                    
+                    </p>
+            </div>
+        </div>
+        
+    </div>
+    <img src="bejgli.png" id="bejgli">
+    <script>
+        function showDiv(id, chevron) {
+            let getId = document.getElementById(`recipe-text-${id}`);
+            let getChevron = document.getElementById(`chevron-down-${chevron}`);
+            if (window.getComputedStyle(getId).display === 'none') {
+                getId.style.display = 'block';
+                getChevron.style.transform = "rotate(-90deg)";
+            
+            } else {
+                getId.style.display = 'none';
+                getChevron.style.transform = "rotate(0deg)";
+            }
+        }
+    </script>
+    <style>
+        * {
+    font-family: Arial; 
+}
+
+:root {
+    
+    --col2: rgb(99, 222, 253);
+    --col3: rgb(107, 137, 245);
+    --slider_btn_color: #dc4040;
+    --recipe-title-width: 40%; 
+    --recipe-title-hover: #ae31dc;
+}
+
+body {
+    background: linear-gradient(rgb(242, 132, 5),white)
+}
+
+.recipe {
+    margin-left: 5%;
+}
+
+.recipe-main-title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.recipe-title {
+    width: var(--recipe-title-width);
+    height: 40px;
+    border-bottom: 2px solid var(--col3);
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.recipe-title h2 {transition: 1s;}
+
+.recipe-title h2:hover {
+    cursor: pointer;
+    color: var(--recipe-title-hover);
+}
+
+#chevron-down-1, #chevron-down-2, #chevron-down-3, #chevron-down-4, #chevron-down-5 {
+    display: block;
+    float: right;
+    font-size: 15px;
+    margin-top: 5px;
+    transition: 1s;
+}
+
+.recipe-div {
+    background-color: var(--col2);
+    border-radius: 10px;
+    width: 95%;
+}
+
+.recipe-content {
+    display: none;
+    height: auto;
+    margin-left: 40px;
+}
+#bejgli { 
+    border: #ae31dc solid 2px;
+    margin-top: 40px;
+    border-radius: 10px;
+    width: 10cm;
+    transform: rotate(180deg);
+    margin-left: 11cm;
+}
+
+    </style>
+</body>
+</html>
+
